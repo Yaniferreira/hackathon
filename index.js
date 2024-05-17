@@ -80,9 +80,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 			await contract.login(nonce, signature);
 			document.getElementById('status').innerText = 'Inicio de sesión exitoso';
-			const reverseClaimerAddress = 'tu_dirección_del_contrato_ReverseClaimer';
-			const reverseClaimerContract = new ethers.Contract(reverseClaimerAddress, reverseClaimerABI, signer);
-			await reverseClaimerContract.claim(userAddress);
 		} catch (error) {
 			console.error(error);
 			document.getElementById('status').innerText = 'Error en el inicio de sesión: ' + error.message;
